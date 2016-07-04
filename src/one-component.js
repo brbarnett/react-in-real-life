@@ -19,11 +19,11 @@ const store = createStore(
     applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
 
-const rootElement = document.getElementById('notifier');
+const notifierRoot = document.getElementById('notifier');
 
 render(
     <Provider store={ store }>
         <NotifierContainer />
     </Provider>,
-    rootElement
+    notifierRoot
 );

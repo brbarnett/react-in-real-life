@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch) => {
           dispatch(decrementNotifications())
       },
       incrementNotifications: () => {
-          dispatch(decrementNotifications())
+          dispatch(incrementNotifications())
       }
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Notifier);
+export default connect(mapStateToProps, mapDispatchToProps)(Notifier); 
