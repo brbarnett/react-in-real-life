@@ -5,6 +5,7 @@
     <title>One component</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/styles.css">
 </head>
 
 <body>
@@ -22,7 +23,10 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+                <ul class="nav navbar-nav">
+                    <li><a href="one-component.html">One Component</a></li>
+                    <li><a href="two-components.html">Two Components</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">
@@ -44,6 +48,10 @@
                 be creating two different components, but they're reacting to the <i>same store</i> so their
                 representation of the total is the same. Also see that we can alter the presentation based on the value.
             </p>
+            <p>
+                Just like the last example, see that there is a placeholder to inject server vars into HTML. This isn't required, but
+                tends to be useful to set initial state so the first load doesn't have to be an AJAX call
+            </p>
         </div>
 
         <div class="row">
@@ -59,7 +67,7 @@
         // NOTE: you can inject server variables here!
         window.initialState = {
             notifications: {
-                count: 2
+                count: 1
             }
         };
     </script>

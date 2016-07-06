@@ -15,9 +15,11 @@ const store = createStore(
     combineReducers({
         notifications
     }),
+    window.initialState,    // optional: pull in state from server vars injected into HTML
     applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
 
+// render notifier component
 render(
     <Provider store={ store }>
         <NotifierContainer />
