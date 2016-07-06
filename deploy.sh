@@ -75,6 +75,7 @@ echo Handling Basic Web Site deployment.
 # 1. Install npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
+  eval 'npm config -g set strict-ssl false'
   eval 'npm install'
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
