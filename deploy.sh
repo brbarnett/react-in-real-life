@@ -85,7 +85,7 @@ fi
 if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then
   echo "Running gulp tasks"
   cd "$DEPLOYMENT_SOURCE"
-  eval './node_modules/.bin/gulp'
+  eval './node_modules/.bin/gulp build'
   exitWithMessageOnError "gulp failed"
   cd - > /dev/null
 fi
