@@ -75,7 +75,7 @@ echo Handling Basic Web Site deployment.
 # 1. Install npm packages
 if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
   cd "$DEPLOYMENT_SOURCE"
-  eval $NPM_CMD 'install --production'
+  eval $NPM_CMD install
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
