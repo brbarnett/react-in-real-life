@@ -81,6 +81,7 @@ fi
 ##################################################################################################################################
 
 echo Handling build
+npm config set strict-ssl false
 npm install
 node_modules/gulp/bin/gulp.js build
 
