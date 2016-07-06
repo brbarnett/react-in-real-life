@@ -6,6 +6,7 @@ import createLogger from 'redux-logger';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import NotifierContainer from './containers/NotifierContainer';
+import BannerBadgeContainer from './containers/BannerBadgeContainer';
 import notifications from './reducers/notifications';
 
 const loggerMiddleware = createLogger();
@@ -23,4 +24,11 @@ render(
         <NotifierContainer />
     </Provider>,
     document.getElementById('notifier')
+);
+
+render(
+    <Provider store={ store }>
+        <BannerBadgeContainer />
+    </Provider>,
+    document.getElementById('bannerBadge')
 );

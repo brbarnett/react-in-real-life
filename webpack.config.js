@@ -1,14 +1,15 @@
 var path = require('path');
-var webpack = require('webpack');
- 
+
 module.exports = {
+  devtool: 'source-map',
   entry: {
-      oneComponent: './src/one-component.js'
+    oneComponent: './src/one-component.js',
+    twoComponents: './src/two-components.js'
   },
   output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].entry.js'
-    },
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].entry.js'
+  },
   module: {
     loaders: [
       {

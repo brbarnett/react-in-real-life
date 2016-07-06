@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>One component</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">React in Real Life</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            Notifications 
+                            <!-- banner badge component -->
+                                <span id="bannerBadge"></span>
+                            <!-- // banner badge component -->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1>Two components</h1>
+            <p>
+                Here's where things get interesting. We're using exactly the same container/component as before as a notifier, but have added
+                a second component to the page. Check out two-components.js, note that they share a common store. We might
+                be creating two different components, but they're reacting to the <i>same store</i> so their
+                representation of the total is the same. Also see that we can alter the presentation based on the value.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <!-- notifier component -->
+                <div id="notifier"></div>
+                <!-- // notifier component -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // NOTE: you can inject server variables here!
+        window.initialState = {
+            notifications: {
+                count: 2
+            }
+        };
+    </script>
+    <script src="dist/twoComponents.entry.js"></script>
+</body>
+
+</html>

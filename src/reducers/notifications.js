@@ -7,7 +7,7 @@ const notifications = (state = { count: 0 }, action) => {
   switch (action.type) {
       case DECREMENT_NOTIFICATIONS:
         return Object.assign({}, state, {
-           count: state.count - 1
+           count: Math.max(state.count - 1, 0)
         });
     case INCREMENT_NOTIFICATIONS:
         return Object.assign({}, state, {

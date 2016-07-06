@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import Notifier from '../components/Notifier';
 import { decrementNotifications, incrementNotifications } from '../actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { 
       notificationCount: state.notifications.count
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return { 
       decrementNotifications: () => {
           dispatch(decrementNotifications())
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
       incrementNotifications: () => {
           dispatch(incrementNotifications())
       }
-    }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notifier); 
