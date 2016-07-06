@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>One component</title>
+    <title>React in Real Life</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/styles.css">
@@ -30,37 +30,6 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="jumbotron">
-            <h1>One component</h1>
-            <p>
-                There's only one React component on this page, which means that while we're still using it to project state, don't expect
-                too much interactivity. Nothing else on this page should react to any changes made by the component.
-            </p>
-            <p>
-                Also note the injected initial state from what could be server variables. This is key when using Razor to create initial state
-                where the page then uses JS to take over rendering/interactivity.
-            </p>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <!-- notifier component -->
-                <div id="notifier"></div>
-                <!-- // notifier component -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // NOTE: you can inject server variables here!
-        window.initialState = {
-            notifications: {
-                count: 2
-            }
-        };
-    </script>
-    <script src="dist/oneComponent.entry.js"></script>
 </body>
 
 </html>
