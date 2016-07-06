@@ -72,18 +72,30 @@ fi
 
 echo Handling Basic Web Site deployment.
 
-# 1. KuduSync
+# 1. Install npm packages
+if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
+  cd "$DEPLOYMENT_SOURCE"
+  eval $NPM_CMD install --production
+  exitWithMessageOnError "npm failed"
+  cd - > /dev/null
+fi
+
+# 2. Run gulp tasks
+if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then
+  echo "Running gulp tasks"
+  cd "$DEPLOYMENT_SOURCE"
+  eval './node_modules/.bin/gulp'
+  exitWithMessageOnError "gulp failed"
+  cd - > /dev/null
+fi
+
+# 3. KuduSync
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
   "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
   exitWithMessageOnError "Kudu Sync failed"
 fi
 
 ##################################################################################################################################
-
-echo Handling build
-npm config set strict-ssl false
-npm install
-node_modules/gulp/bin/gulp.js build
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
