@@ -1,3 +1,5 @@
-import { notifications } from './notifications';
+import notifications from './notifications';
 
-export default notifications;
+export {
+    notifications
+};
