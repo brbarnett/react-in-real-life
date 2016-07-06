@@ -82,7 +82,7 @@ fi
 
 echo Handling build
 npm install
-gulp build
+node_modules/gulp/bin/gulp.js build
 
 # Post deployment stub
 if [[ -n "$POST_DEPLOYMENT_ACTION" ]]; then
