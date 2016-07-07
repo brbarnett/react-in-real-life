@@ -81,6 +81,12 @@ fi
 echo "npm + gulp"
 node -v
 npm -v
+
+echo "set npm cert"
+npm config set ca ""
+npm install npm -g
+npm config delete ca
+
 npm install
 gulp build
 
