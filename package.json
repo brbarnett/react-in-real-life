@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "4.4.x"
+    "node": "4.4.6",
+    "npm": "2.15.5"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
