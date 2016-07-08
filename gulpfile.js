@@ -4,7 +4,7 @@ var webpack = require('gulp-webpack');
 
 var wpConfig = require('./webpack.config');
 
-gulp.task('build', ['html', 'js']);
+gulp.task('build', ['html', 'js', 'css']);
 
 gulp.task('html', buildHtml);
 gulp.task('js', buildJs);

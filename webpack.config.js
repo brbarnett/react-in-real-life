@@ -4,7 +4,8 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     oneComponent: './src/one-component.js',
-    twoComponents: './src/two-components.js'
+    twoComponents: './src/two-components.js',
+    simpleReact: './src/simple-react.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),

@@ -1,7 +1,9 @@
 import BannerBadge from './BannerBadge';
-import Notifier from './Notifer';
+import Notifier from './Notifier';
+import PeopleTable from './PeopleTable';
 
 export {
     BannerBadge,
-    Notifier
+    Notifier,
+    PeopleTable
 };
